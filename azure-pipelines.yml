@@ -16,11 +16,9 @@ stages:
               addToPath: true
               architecture: 'x64'
           
-          - task: PythonScript@0
-            displayName: install dependencies
-            inputs:
-             script: |
+          - script: |
               python -m pip install --upgrade pip
+              displayName: install dependencies
       
 
           
