@@ -18,7 +18,13 @@ stages:
           
           - script: |
               python -m pip install --upgrade pip
-              displayName: install dependencies
+              python -m pip install pytest
+            displayName: Upgrade pip & pytest
+
+          - script: |
+               python -m pytest
+            displayName: Run tests
+
       
 
           
