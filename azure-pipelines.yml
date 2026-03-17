@@ -22,8 +22,10 @@ stages:
             displayName: Upgrade pip & pytest
 
           - script: |
+       
                python -m pytest
-            displayName: Run tests
+            displayName: "Run tests"
+            condition: always()
 
       
 
