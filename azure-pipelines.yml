@@ -18,9 +18,24 @@ stages:
           
           - script: |
               python -m pip install --upgrade pip
-              
-            displayName: Upgrade pip 
+            displayName: Upgrade pip
+            
+          
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: 'Azure subscription 1(d7b7b790-dad8-4cbb-bc81-f19c99e4569a)'
+              KeyVaultName: 'devopskeyvault87'
+              SecretsFilter: '*'
+              RunAsPreJob: true
 
+          - script: 
+            displayName: Check secret
+              if [ -n "$(my-secret)" ]; then
+                     echo "Key Vault integration works"
+              else
+                      echo "Key Vault integration failed"
+                      exit 1
+              fi
        
           
 
