@@ -5,6 +5,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+ -  group: New variable group 22-Mar
+
 stages:
   - stage: dev
     jobs:
@@ -23,7 +26,7 @@ stages:
           
           - task: AzureKeyVault@2
             inputs:
-              azureSubscription: 'Azure subscription 1(d7b7b790-dad8-4cbb-bc81-f19c99e4569a)'
+              azureSubscription: '$(subscription)'
               KeyVaultName: 'devopskeyvault87'
               SecretsFilter: '*'
               RunAsPreJob: true
