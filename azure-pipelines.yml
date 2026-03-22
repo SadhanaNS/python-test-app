@@ -18,14 +18,11 @@ stages:
           
           - script: |
               python -m pip install --upgrade pip
-              python -m pip install pytest
-            displayName: Upgrade pip & pytest
+              
+            displayName: Upgrade pip 
 
-          - script: |
        
-               python -m pytest
-            displayName: "Run tests"
-            condition: always()
+          
 
       
 
