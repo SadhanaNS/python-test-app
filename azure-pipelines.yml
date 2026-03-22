@@ -29,7 +29,7 @@ stages:
               RunAsPreJob: true
 
           - script: |
-              if [ -n "$(my-secret)" ]; then
+              if [ -n "$(my-secret1)" ]; then
                      echo "Key Vault integration works"
               else
                       echo "Key Vault integration failed"
