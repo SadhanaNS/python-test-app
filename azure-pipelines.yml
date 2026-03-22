@@ -28,7 +28,7 @@ stages:
               SecretsFilter: '*'
               RunAsPreJob: true
 
-          - script: 
+          - script: |
             displayName: Check secret
               if [ -n "$(my-secret)" ]; then
                      echo "Key Vault integration works"
